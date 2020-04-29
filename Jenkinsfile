@@ -2,11 +2,6 @@ pipeline {
    agent any
 
    stages {
-		stage('Checkout') {
-			steps {
-				git credentialsId: 'GITHUB', url: 'https://github.com/kmayer10/ibm-devops-basics-batch-1.git'
-			}
-		}
 		stage('Hello') {
 			steps {
 				echo 'Hello World'
