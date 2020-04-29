@@ -1,5 +1,5 @@
 timestamps {
-    node('windows') {
+    node('master') {
         stage('checkout'){
             git credentialsId: 'GITHUB', url: 'https://github.com/kmayer10/ibm-devops-basics-batch-1.git'
         }
