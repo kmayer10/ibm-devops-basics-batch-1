@@ -1,13 +1,15 @@
-pipeline {
-   agent any
+timestamps {
 
-   stages {
-		stage('Hello') {
-			steps {
-				echo 'Hello World'
-			}
+	node('windows') {
+		stage('checkout'){
+			git credentialsId: 'GITHUB', url: 'https://github.com/kmayer10/ibm-devops-basics-batch-1.git'
 		}
+		stage('Hello') {
+			bat label: '', script: 'echo "[INFO] This is running on Windows"'
+		}
+	}
 		
+	node('master') {	
 		stage('calling shell'){
 		    
 		    steps{
